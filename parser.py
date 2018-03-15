@@ -13,7 +13,7 @@ The file follows the following format:
          torus: add a torus to the edge matrix - 
 	    takes 5 arguemnts (cx, cy, cz, r1, r2)
          box: add a rectangular prism to the edge matrix - 
-	    takes 6 arguemnts (x, y, z, width, height, depth)	    
+	    takes 6 arguments (x, y, z, width, height, depth)	    
 
 	 circle: add a circle to the edge matrix - 
 	    takes 3 arguments (cx, cy, r)
@@ -44,7 +44,7 @@ The file follows the following format:
 
 See the file script for an example of the file format
 """
-ARG_COMMANDS = [ 'line', 'scale', 'move', 'rotate', 'save', 'circle', 'bezier', 'hermite' ]
+ARG_COMMANDS = [ 'line', 'scale', 'move', 'rotate', 'save', 'circle', 'bezier', 'hermite', 'box' ]
 
 def parse_file( fname, edges, transform, screen, color ):
 
@@ -108,6 +108,10 @@ def parse_file( fname, edges, transform, screen, color ):
         elif line == 'ident':
             ident(transform)
 
+        elif line == 'box':
+            add_box(edges,float(args[0]),float(args[1]),float(args[2]),float
+                    (args[3]),float(args[4]),float(args[5]))
+        
         elif line == 'apply':
             matrix_mult( transform, edges )
 
