@@ -116,7 +116,7 @@ def parse_file( fname, edges, transform, screen, color ):
             add_sphere(edges, float(args[0]), float(args[1]), float(args[2]), float(args[3]), 0.1)
 
         elif line == 'torus':
-            add_torus(edges, float(args[0]), float(args[1]), float(args[2]), float(args[3]), float(args[4]), 0.1)
+            add_torus(edges, float(args[0]), float(args[1]), float(args[2]), float(args[3]), float(args[4]), 0.075)
 
         elif line == 'clear':
             edges = []
